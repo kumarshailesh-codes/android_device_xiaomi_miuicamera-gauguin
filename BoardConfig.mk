@@ -9,6 +9,9 @@ include vendor/xiaomi/miuicamera-toco/BoardConfigVendor.mk
 
 MIUICAMERA_PATH := device/xiaomi/miuicamera-toco
 
+# Malloc
+MALLOC_SVELTE := true
+
 # Properties
 TARGET_SYSTEM_PROP += $(MIUICAMERA_PATH)/system.prop
 
