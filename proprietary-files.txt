@@ -14,5 +14,5 @@ system/lib64/libcamera_mianode_jni.xiaomi.so
 system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
 
 # Leica
-system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|6a34f5cbea7317caa4441a5c175197d8ce3673c5
+system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|f5a8f3e046a04e5de4ca172cda0e23c55b9eaa17
 system/lib64/libcamera_jpegutil_jni.xiaomi.so|d159aebabed57516153a2d203d6104c80b4c1a95
