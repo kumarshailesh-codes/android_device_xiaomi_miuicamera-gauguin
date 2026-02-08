@@ -5,9 +5,9 @@
 #
 
 # Inherit from the proprietary version
-include vendor/xiaomi/miuicamera-miatoll/BoardConfigVendor.mk
+include vendor/xiaomi/miuicamera-surya/BoardConfigVendor.mk
 
-MIUICAMERA_PATH := device/xiaomi/miuicamera-miatoll
+MIUICAMERA_PATH := device/xiaomi/miuicamera-surya
 
 # Malloc
 MALLOC_SVELTE := true
