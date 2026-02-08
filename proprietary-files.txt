@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from miui_TOCOGlobal_V13.0.4.0.SFNMIXM
+# All unpinned blobs below are extracted from V14.0.4.0.SJWMIXM (CURTANAGlobal)
 
 system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
 system/lib64/libdoc_photo_c++_shared.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
@@ -10,8 +10,9 @@ system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/ar
 system/lib64/librefocus.so;DISABLE_CHECKELF;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
 system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
 system/lib64/libcamera_algoup_jni.xiaomi.so
-system/lib64/libcamera_jpegutil_jni.xiaomi.so|d159aebabed57516153a2d203d6104c80b4c1a95
 system/lib64/libcamera_mianode_jni.xiaomi.so
-system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|6a34f5cbea7317caa4441a5c175197d8ce3673c5
 system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
-vendor/lib64/libSNPE.so|0c79d212c710a5f4c1831259a522b59b96bf1cfb
+
+# Leica
+system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|6a34f5cbea7317caa4441a5c175197d8ce3673c5
+system/lib64/libcamera_jpegutil_jni.xiaomi.so|d159aebabed57516153a2d203d6104c80b4c1a95
