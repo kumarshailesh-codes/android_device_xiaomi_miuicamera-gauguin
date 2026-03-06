@@ -18,22 +18,26 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/xiaomi/miuicamera-surya',
-    'vendor/xiaomi/surya',
+    'device/xiaomi/miuicamera-gauguin',
+    'vendor/xiaomi/gauguin',
 ]
-
 
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
 }
 
 blob_fixups: blob_fixups_user_type = {
+    # Libgui shim to fix JNI crashes in MiuiCamera
     ('system/lib64/libcamera_algoup_jni.xiaomi.so', 'system/lib64/libcamera_mianode_jni.xiaomi.so'): blob_fixup()
         .add_needed('libgui_shim_miuicamera.so'),
-}  # fmt: skip
+
+    # Fix post-processing library (Removes old HIDL dependency)
+    'system/lib64/libmicampostproc_client.so': blob_fixup()
+        .remove_needed('libhidltransport.so'),
+} # fmt: skip
 
 module = ExtractUtilsModule(
-    'miuicamera-surya',
+    'miuicamera-gauguin',
     'xiaomi',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
