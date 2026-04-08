@@ -1,18 +1,18 @@
 # MiuiCamera (Gauguin V14.0.3.0.SJSINXM)
-system/system/priv-app/MiuiCamera/MiuiCamera.apk:system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|389e900994f8776655c65f212f384950e309228a
-
-# JNI Libraries & Symlinks
-system/system/lib64/libcamera_algoup_jni.xiaomi.so:system/lib64/libcamera_algoup_jni.xiaomi.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiCamera/lib/arm64/libcamera_algoup_jni.xiaomi.so|4226194b752df468e8334be110271510e42d76a7
-system/system/lib64/libcamera_mianode_jni.xiaomi.so:system/lib64/libcamera_mianode_jni.xiaomi.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiCamera/lib/arm64/libcamera_mianode_jni.xiaomi.so|6e047717f9b020084323b723a1059f33b1e326c9
-system/system/lib64/libcamera_jpegutil_jni.xiaomi.so:system/lib64/libcamera_jpegutil_jni.xiaomi.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiCamera/lib/arm64/libcamera_jpegutil_jni.xiaomi.so|4959a997232230303b640c4980a73e427d159aeb
-
-# Post-Processing & 108MP Support
-system/system/lib64/libmicampostproc_client.so:system/lib64/libmicampostproc_client.so|08678000490be2d3f78959d2a23e8006e877073b
-system/system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so:system/lib64/vendor.xiaomi.hardware.campostproc@1.0.so|c101d25514f09d13f99092403668615b3e648873
-
-# MiuiExtraPhoto (Gauguin V14.0.3.0.SJSINXM)
-system/system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk:system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk|4399e77591607bf372be4dd4b20c0cad4ef8d94c
-
-# MiuiExtraPhoto JNI Libraries
+system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
+system/lib64/libdoc_photo_c++_shared.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
+system/lib64/libgallery_arcsoft_dualcam_refocus.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so
+system/lib64/libgallery_arcsoft_portrait_lighting.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting.so
+system/lib64/libgallery_arcsoft_portrait_lighting_c.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting_c.so
+system/lib64/libgallery_mpbase.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_mpbase.so
+system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
+system/lib64/librefocus.so;DISABLE_CHECKELF;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
+system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
+system/lib64/libcamera_algoup_jni.xiaomi.so
+system/lib64/libcamera_jpegutil_jni.xiaomi.so|0fa3daca5f84ca64b5be34d8c430fbc029a4749d
+system/lib64/libcamera_mianode_jni.xiaomi.so
+system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|af0c918302c75401d4d9d8688a24f41d8acb72a6
+system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
+vendor/lib64/libSNPE.so|f9caa1b3043c64d8bb9fcb48136486b58c2ae171
 system/system/lib64/libdoc_photo.so:system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so|e8bd788a692d4ed1855d996a18399503e8bd788a
 system/system/lib64/libmibokeh_gallery.so:system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so|ada80cb3690b4d2db8a4faf31a83ac38ada80cb3
