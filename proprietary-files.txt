@@ -14,5 +14,3 @@ system/lib64/libcamera_mianode_jni.xiaomi.so
 system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|af0c918302c75401d4d9d8688a24f41d8acb72a6
 system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
 vendor/lib64/libSNPE.so|f9caa1b3043c64d8bb9fcb48136486b58c2ae171
-system/system/lib64/libdoc_photo.so:system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so|e8bd788a692d4ed1855d996a18399503e8bd788a
-system/system/lib64/libmibokeh_gallery.so:system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so|ada80cb3690b4d2db8a4faf31a83ac38ada80cb3
