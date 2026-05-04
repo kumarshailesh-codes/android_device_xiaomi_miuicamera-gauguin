@@ -1,16 +1,20 @@
 # MiuiCamera (Gauguin V14.0.3.0.SJSINXM)
-system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
-system/lib64/libdoc_photo_c++_shared.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
-system/lib64/libgallery_arcsoft_dualcam_refocus.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so
-system/lib64/libgallery_arcsoft_portrait_lighting.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting.so
-system/lib64/libgallery_arcsoft_portrait_lighting_c.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_portrait_lighting_c.so
-system/lib64/libgallery_mpbase.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_mpbase.so
-system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
-system/lib64/librefocus.so;DISABLE_CHECKELF;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
-system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
+
+# MiuiCamera APK and JNI Libraries
+system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|af0c918302c75401d4d9d8688a24f41d8acb72a6
 system/lib64/libcamera_algoup_jni.xiaomi.so
 system/lib64/libcamera_jpegutil_jni.xiaomi.so|0fa3daca5f84ca64b5be34d8c430fbc029a4749d
 system/lib64/libcamera_mianode_jni.xiaomi.so
-system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|af0c918302c75401d4d9d8688a24f41d8acb72a6
+
+# MiuiExtraPhoto APK and Gallery Blobs
 system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
-vendor/lib64/libSNPE.so|f9caa1b3043c64d8bb9fcb48136486b58c2ae171
+system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
+
+# Refocus Blobs (Renamed in Dump)
+system/lib64/librefocus.so;DISABLE_CHECKELF;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
+system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
+system/lib64/libarcsoft_dualcam_refocus.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so
+
+# Document Photo Blobs
+system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
+system/lib64/libdoc_photo_c++_shared.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
