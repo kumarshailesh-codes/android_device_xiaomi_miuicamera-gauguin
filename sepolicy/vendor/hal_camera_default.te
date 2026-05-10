@@ -7,14 +7,12 @@ allow hal_camera_default camera_data_file:sock_file write;
 allow hal_camera_default camera_data_file:dir create_dir_perms;
 allow hal_camera_default camera_data_file:file create_file_perms;
 allow hal_camera_client vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
-allow hal_camera_client vendor_hal_cameraperf_hwservice:hwservice_manager find;
+allow hal_camera_client vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
 
-add_hwservice(hal_camera_server, vendor_hal_camerapostproc_xiaomi_hwservice)
 binder_call(vendor_hal_camerapostproc_xiaomi_client, vendor_hal_camerapostproc_xiaomi_server)
 binder_call(vendor_hal_camerapostproc_xiaomi_server, vendor_hal_camerapostproc_xiaomi_client)
 allow hal_camera_default vendor_npu_device:chr_file rw_file_perms;
 # Xiaomi Post-Processing Attributes
-attribute vendor_hal_camerapostproc_xiaomi;
 
 allow hal_camera_default proc_stat:file { open read };
 
@@ -22,8 +20,6 @@ allow hal_camera_default proc_stat:file { open read };
 allow hal_camera_default system_server:binder { call transfer };
 
 # Camera Post Processing
-type vendor_hal_camerapostproc_xiaomi_hwservice, hwservice_manager_type;
-vendor_internal_prop(vendor_camera_sensor_prop)
 set_prop(hal_camera_default, vendor_camera_sensor_prop)
 r_dir_file(hal_camera_default, camera_persist_file)
 
@@ -60,6 +56,7 @@ r_dir_file(hal_camera_default, vendor_persist_camera_file)
 r_dir_file(hal_camera_default, vendor_persist_sensors_file)
 
 # Allow hal_camera_default to access Xiaomi remosaic daemon
+type vendor_remosaic_daemon_service, service_manager_type;
 allow hal_camera_default vendor_remosaic_daemon_service:service_manager find;
 
 # Allow setting camera properties
@@ -69,6 +66,7 @@ set_prop(hal_camera_default, vendor_camera_prop)
 allow hal_camera_default socket_device:sock_file write;
 
 # Allow the camera HAL to access CDSP
+type vendor_public_adsprpcd_file, file_type;
 allow hal_camera_default vendor_public_adsprpcd_file:file r_file_perms;
 allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
 
@@ -81,6 +79,11 @@ allow hal_camera_default proc_stat:file r_file_perms;
 # Camera HAL wants to search on /mnt/vendor
 allow hal_camera_default mnt_vendor_file:dir search;
 
+type mnt_data_file, file_type;
 allow hal_camera_default mnt_data_file:dir search;
+attribute vendor_hal_cameraperf;
+attribute vendor_hal_cameraperf_client;
+attribute vendor_hal_cameraperf_server;
+
 hal_server_domain(hal_camera_default, vendor_hal_cameraperf)
 

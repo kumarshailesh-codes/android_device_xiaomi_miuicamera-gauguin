@@ -20,7 +20,7 @@ dontaudit miuicamera_app radio_service:service_manager find;
 allow miuicamera_app adsprpcd_file:dir { open read search };
 allow miuicamera_app vendor_xdsp_device:chr_file { ioctl open read write };
 allow miuicamera_app vendor_qdsp_device:chr_file { ioctl open read write };
-allow miuicamera_app hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
+allow miuicamera_app vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
 allow miuicamera_app hal_misys_hwservice:hwservice_manager find;
 allow miuicamera_app privapp_data_file:file execute;
 allow miuicamera_app vendor_camera_data_file:dir { append map search r_dir_perms write };

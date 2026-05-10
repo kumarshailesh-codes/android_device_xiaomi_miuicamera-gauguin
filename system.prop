@@ -19,3 +19,9 @@ vendor.media.omx.disable=1
 # MiuiCamera
 ro.miui.build.region=in
 ro.product.mod_device=_global
+
+# Disable Vidhance/EIS to fix video recording crash
+persist.camera.eis.enable=0
+persist.vendor.camera.eis.enable=0
+persist.camera.is_type=0
+persist.vendor.camera.is_type=0
