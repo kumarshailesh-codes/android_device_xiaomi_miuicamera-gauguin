@@ -1,19 +1,86 @@
-attribute vendor_hal_camerapostproc_xiaomi;
-attribute vendor_hal_camerapostproc_xiaomi_client;
-attribute vendor_hal_camerapostproc_xiaomi_server;
+type camera_persist_file, vendor_persist_type, file_type;
+type vendor_hal_cameraperf_hwservice, hwservice_manager_type, protected_hwservice;
 
-hal_server_domain(hal_camera_default, vendor_hal_camerapostproc_xiaomi)
+typeattribute hal_camera_default data_between_core_and_vendor_violators;
+# Allow camera to access /data/misc
+allow hal_camera_default camera_data_file:sock_file write;
+allow hal_camera_default camera_data_file:dir create_dir_perms;
+allow hal_camera_default camera_data_file:file create_file_perms;
 allow hal_camera_client vendor_hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
-add_hwservice(hal_camera_server, vendor_hal_camerapostproc_xiaomi_hwservice)
+allow hal_camera_client vendor_hal_cameraperf_hwservice:hwservice_manager find;
 
+add_hwservice(hal_camera_server, vendor_hal_camerapostproc_xiaomi_hwservice)
 binder_call(vendor_hal_camerapostproc_xiaomi_client, vendor_hal_camerapostproc_xiaomi_server)
 binder_call(vendor_hal_camerapostproc_xiaomi_server, vendor_hal_camerapostproc_xiaomi_client)
+allow hal_camera_default vendor_npu_device:chr_file rw_file_perms;
+# Xiaomi Post-Processing Attributes
+attribute vendor_hal_camerapostproc_xiaomi;
 
+allow hal_camera_default proc_stat:file { open read };
+
+# Allow Camera to access system_server
+allow hal_camera_default system_server:binder { call transfer };
+
+# Camera Post Processing
+type vendor_hal_camerapostproc_xiaomi_hwservice, hwservice_manager_type;
+vendor_internal_prop(vendor_camera_sensor_prop)
+set_prop(hal_camera_default, vendor_camera_sensor_prop)
+r_dir_file(hal_camera_default, camera_persist_file)
+
+
+allow hal_camera_default vendor_xdsp_device:chr_file { read };
+
+# Binder communication
 binder_call(hal_camera_default, platform_app)
+hal_client_domain(hal_camera_default, hal_codec2)
 
-# Allow camera to read over /dev/adsprpc-smd-secure
+# HARDWARE ACCESS - Only for this specific domain to bypass neverallow
+allow hal_camera_default video_device:chr_file rw_file_perms;
+allow hal_camera_default camera_device:chr_file rw_file_perms;
+allow hal_camera_default self:capability sys_nice;
+
+# Qualcom DSP
 allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
+allow hal_camera_default vendor_qdsp_device:chr_file r_file_perms;
+get_prop(hal_camera_default, vendor_camera_prop)
 
 dontaudit hal_camera_default default_prop:file read;
-
 hal_client_domain(platform_app, vendor_hal_camerapostproc_xiaomi)
+
+# For interfacing with PowerHAL
+hal_client_domain(hal_camera_default, hal_power)
+
+# Allow hal_camera_default to read to vendor_sysfs_kgsl
+r_dir_file(hal_camera_default, vendor_sysfs_kgsl)
+
+# Allow hal_camera_default to read to /mnt/vendor/persist/camera
+r_dir_file(hal_camera_default, vendor_persist_camera_file)
+
+# Allow hal_camera_default to read to /mnt/vendor/persist/sensors
+r_dir_file(hal_camera_default, vendor_persist_sensors_file)
+
+# Allow hal_camera_default to access Xiaomi remosaic daemon
+allow hal_camera_default vendor_remosaic_daemon_service:service_manager find;
+
+# Allow setting camera properties
+set_prop(hal_camera_default, vendor_camera_prop)
+
+# Allow access to non-labeled sockets
+allow hal_camera_default socket_device:sock_file write;
+
+# Allow the camera HAL to access CDSP
+allow hal_camera_default vendor_public_adsprpcd_file:file r_file_perms;
+allow hal_camera_default vendor_xdsp_device:chr_file r_file_perms;
+
+# Allow access to /proc/meminfo
+allow hal_camera_default proc_meminfo:file r_file_perms;
+
+# Allow access to /proc/stat
+allow hal_camera_default proc_stat:file r_file_perms;
+
+# Camera HAL wants to search on /mnt/vendor
+allow hal_camera_default mnt_vendor_file:dir search;
+
+allow hal_camera_default mnt_data_file:dir search;
+hal_server_domain(hal_camera_default, vendor_hal_cameraperf)
+

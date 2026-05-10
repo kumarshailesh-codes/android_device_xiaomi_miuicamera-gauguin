@@ -6,3 +6,16 @@ persist.vendor.camera.privapp.list=com.android.camera
 
 # MiuiCamera
 ro.miui.notch=1
+
+# Force Codec2 path
+debug.stagefright.omx_default_rank=0
+debug.stagefright.c2-atomic=true
+media.stagefright.enable-c2=1
+media.stagefright.enable-fma=1
+
+# Disable legacy OMX components if they conflict
+vendor.media.omx.disable=1
+
+# MiuiCamera
+ro.miui.build.region=in
+ro.product.mod_device=_global

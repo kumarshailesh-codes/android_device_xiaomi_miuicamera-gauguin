@@ -1,3 +1,51 @@
+system/etc/public.libraries-xiaomi.txt
+system_ext/lib64/libOpenCL_system.so
+system/framework/camerax-vendor-extensions.jar
+system_ext/lib64/libcameraimpl.so:system/lib64/libcameraimpl.so
+system/lib64/libmqsas.so
+system/lib64/libopencl-camera.so
+system/lib64/libmisys_jni.so
+system/lib64/vendor.xiaomi.hardware.misys@1.0.so;MODULE_SUFFIX=_system
+system/lib64/vendor.xiaomi.hardware.misys@2.0.so;MODULE_SUFFIX=_system
+system/lib64/vendor.xiaomi.hardware.misys@3.0.so;MODULE_SUFFIX=_system
+system/lib64/vendor.xiaomi.hardware.misys@4.0.so;MODULE_SUFFIX=_system
+vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
+vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
+vendor/lib64/vendor.xiaomi.hardware.misys@3.0.so
+vendor/lib64/vendor.xiaomi.hardware.misys@4.0.so
+vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.misys@3.0-service.rc
+vendor/etc/init/vendor.xiaomi.hardware.misys@4.0-service.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@1.0.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@2.0.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@3.0.xml
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.misys@4.0.xml
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@3.0-impl.so
+vendor/lib64/hw/vendor.xiaomi.hardware.misys@4.0-impl.so
+vendor/lib64/libcheckpid.so
+vendor/lib64/liblogwrap_vendor.so
+
+
+vendor/etc/camera/102_SummerDay.png
+vendor/etc/camera/103_Fantasy.png
+vendor/etc/camera/104_Meet.png
+vendor/etc/camera/105_WindSing.png
+vendor/etc/camera/106_Lost.png
+vendor/etc/camera/107_Central.png
+vendor/etc/camera/108_NorthernEurope.png
+vendor/etc/camera/109_Rome.png
+vendor/etc/camera/110_BlackGold.png
+vendor/etc/camera/111_GreenOrange.png
+vendor/etc/camera/112_CyberPunk.png
+vendor/etc/camera/113_BlackIce.png
+system/lib64/libcamera2ndk.so
+system/lib64/libcamera_client.so
+system/lib64/libcamera_metadata.so
+system/lib64/libcameraservice.so
+system/lib64/libarcsoft_dualcam_refocus.so
 # MiuiCamera (Gauguin V14.0.3.0.SJSINXM)
 
 # MiuiCamera APK and JNI Libraries
@@ -13,8 +61,34 @@ system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/ar
 # Refocus Blobs (Renamed in Dump)
 system/lib64/librefocus.so;DISABLE_CHECKELF;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
 system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
-system/lib64/libarcsoft_dualcam_refocus.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libgallery_arcsoft_dualcam_refocus.so
 
 # Document Photo Blobs
 system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
 system/lib64/libdoc_photo_c++_shared.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
+
+# MiuiCamera Additional Features (Portrait & AI)
+system/lib64/libgallery_block_sdk.so
+system/lib64/libMiuiGalleryNSGIF.so
+
+# Gallery & Camera Tools
+system/app/CameraTools/CameraTools.apk
+system/app/CameraExtensionsProxy/CameraExtensionsProxy.apk
+system/priv-app/MIUIGalleryGlobal/MIUIGalleryGlobal.apk
+
+system/lib64/libarcsoft_single_chart_calibration.so
+system/lib64/libmiuiblursdk.so
+system/lib64/libyuv.so
+system/lib64/libmegvii_bokeh_jni.so
+system/lib64/libselection.so
+system/lib64/libXmStreamingSDK.so
+system/lib64/libinpaint.so
+system/lib64/libinpaint_jni.so
+system/lib64/libnexcralbody_mc_jb.so
+system/lib64/libnexeditorsdk.so
+system/lib64/libnexralbody_audio.so
+system/lib64/libsqliteX.so
+system/lib64/libvis.so
+system/lib64/libwrapnexflaccalbody.so
+system/lib64/libwrapnexpcmcalbody.so
+system/lib64/libxcrash_dumper.so
+system/lib64/libxcrash.so

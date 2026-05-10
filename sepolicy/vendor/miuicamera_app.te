@@ -1,0 +1,42 @@
+binder_use(miuicamera_app)
+binder_call(miuicamera_app, hal_camera_default)
+
+type miuicamera_app, domain, coredomain;
+
+app_domain(miuicamera_app)
+net_domain(miuicamera_app)
+
+allow miuicamera_app {
+    app_api_service
+    audioserver_service
+    cameraserver_service
+    mediaextractor_service
+    mediametrics_service
+    mediaserver_service
+}:service_manager find;
+
+dontaudit miuicamera_app radio_service:service_manager find;
+
+allow miuicamera_app adsprpcd_file:dir { open read search };
+allow miuicamera_app vendor_xdsp_device:chr_file { ioctl open read write };
+allow miuicamera_app vendor_qdsp_device:chr_file { ioctl open read write };
+allow miuicamera_app hal_camerapostproc_xiaomi_hwservice:hwservice_manager find;
+allow miuicamera_app hal_misys_hwservice:hwservice_manager find;
+allow miuicamera_app privapp_data_file:file execute;
+allow miuicamera_app vendor_camera_data_file:dir { append map search r_dir_perms write };
+allow miuicamera_app vendor_camera_data_file:file { getattr open read };
+
+# Properties
+get_prop(miuicamera_app, vendor_audio_prop)
+get_prop(miuicamera_app, vendor_display_prop)
+get_prop(miuicamera_app, vendor_fingerprint_prop)
+
+# Allow the camera app to manage its internal storage (fixes EACCES mkdir)
+allow miuicamera_app privapp_data_file:dir create_dir_perms;
+allow miuicamera_app privapp_data_file:file create_file_perms;
+
+# Allow finding the main camera service
+allow miuicamera_app cameraserver_service:service_manager find;
+
+# Additional fix for Xiaomi post-processing crash in Enforcing
+allow miuicamera_app system_file:file { getattr open read };
