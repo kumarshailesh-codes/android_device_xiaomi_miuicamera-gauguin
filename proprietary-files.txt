@@ -6,7 +6,7 @@ system/etc/sysconfig/com.miui.core.config.xml
 system/etc/public.libraries-xiaomi.txt
 system_ext/lib64/libOpenCL_system.so
 system/framework/camerax-vendor-extensions.jar;BOOT_JAR
-system_ext/lib64/libcameraimpl.so:system/lib64/libcameraimpl.so
+system_ext/lib64/libcameraimpl.so:system/lib64/libcameraimpl.so;DISABLE_CHECKELF
 system/lib64/libmqsas.so
 system/lib64/libopencl-camera.so
 system/lib64/libmisys_jni.so
@@ -36,10 +36,10 @@ vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@4.0-service
 vendor/lib64/libcheckpid.so
 vendor/lib64/liblogwrap_vendor.so
+vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
 product/etc/device_features/gauguin.xml:vendor/etc/device_features/gauguin.xml
 system/system/etc/permissions/platform-miui.xml:system/etc/permissions/platform-miui.xml
-product/etc/permissions/com.android.settings.intelligence.xml
 
 vendor/etc/camera/102_SummerDay.png
 vendor/etc/camera/103_Fantasy.png
@@ -97,30 +97,4 @@ system/lib64/libwrapnexflaccalbody.so
 system/lib64/libwrapnexpcmcalbody.so
 system/lib64/libxcrash_dumper.so
 system/lib64/libxcrash.so
-
-# Camera Components (Vendor)
-vendor/lib64/libvidhance.so
-vendor/lib64/camera/components/com.vidhance.node.eis.so
-vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
-vendor/lib64/camera/components/com.mi.node.mimovie.so
-vendor/lib64/camera/components/com.mi.node.distortioncorrection.so
-vendor/lib64/camera/components/com.xiaomi.node.mibokeh.so
-vendor/lib64/camera/components/com.mi.node.skinbeautifier.so
-vendor/lib64/camera/components/com.mi.node.superlowlightraw.so
-vendor/lib64/camera/components/com.xiaomi.node.misegment.so
-vendor/lib64/camera/components/com.xiaomi.node.mifilter.so
-vendor/lib64/camera/components/com.mi.node.depurple.so
-vendor/lib64/camera/components/com.mi.node.hdr.so
-vendor/lib64/camera/components/com.mi.node.aiasd.so
-vendor/lib64/camera/components/com.xiaomi.node.tracker.so
-vendor/lib64/camera/components/com.mi.node.videobokeh.so
-vendor/lib64/camera/components/com.mi.node.watermark.so
-vendor/lib64/camera/components/com.mi.node.bodyslim.so
-
-# Vidhance Calibration
-vendor/etc/camera/vidhance_calibration
-vendor/etc/camera/vidhance_calibration_hm2
-vendor/etc/camera/vidhance_calibration_imx682
-vendor/etc/camera/vidhance_calibration_ov16a1q
-vendor/etc/camera/vidhance_calibration_ov8856
 
