@@ -98,3 +98,7 @@ system/lib64/libwrapnexpcmcalbody.so
 system/lib64/libxcrash_dumper.so
 system/lib64/libxcrash.so
 
+vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib/vendor.qti.hardware.camera.postproc@1.0.so
+
+
