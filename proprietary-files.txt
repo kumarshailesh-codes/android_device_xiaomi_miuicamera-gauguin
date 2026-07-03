@@ -1,15 +1,59 @@
-product/etc/sysconfig/xiaomi.xml
-product/framework/ims-ext-common.jar
-system/framework/miui-services.jar
-system/framework/miui-framework.jar
-system/etc/sysconfig/com.miui.core.config.xml
+# MiuiCamera Configs and Permissions
+product/etc/device_features/gauguin.xml:vendor/etc/device_features/gauguin.xml
 system/etc/public.libraries-xiaomi.txt
-system_ext/lib64/libOpenCL_system.so
+product/etc/sysconfig/xiaomi.xml
+
+# CameraX Extensions Frameworks
 system/framework/camerax-vendor-extensions.jar;BOOT_JAR
+system/app/CameraExtensionsProxy/CameraExtensionsProxy.apk
+
+# MiuiCamera Core Apps and Tools
+system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash
+system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
+system/app/CameraTools/CameraTools.apk
+
+# System Libraries & Camera JNI Shims
+system_ext/lib64/libOpenCL_system.so
 system_ext/lib64/libcameraimpl.so:system/lib64/libcameraimpl.so;DISABLE_CHECKELF
-system/lib64/libmqsas.so
 system/lib64/libopencl-camera.so
 system/lib64/libmisys_jni.so
+system/lib64/libcamera_algoup_jni.xiaomi.so
+system/lib64/libcamera_jpegutil_jni.xiaomi.so
+system/lib64/libcamera_mianode_jni.xiaomi.so
+system/lib64/libmqsas.so
+
+# Gallery & ExtraPhoto Processing Blobs
+system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
+system/lib64/librefocus.so;DISABLE_CHECKELF;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
+system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
+system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
+system/lib64/libdoc_photo_c++_shared.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
+system/lib64/libgallery_block_sdk.so
+system/lib64/libMiuiGalleryNSGIF.so
+
+# Proprietary Algorithms (ArcSoft / Portrait / Inpaint)
+system/lib64/libgallery_arcsoft_dualcam_refocus.so:system/lib64/libarcsoft_dualcam_refocus.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libarcsoft_dualcam_refocus.so
+system/lib64/libarcsoft_single_chart_calibration.so
+system/lib64/libmiuiblursdk.so
+system/lib64/libselection.so
+system/lib64/libXmStreamingSDK.so
+system/lib64/libinpaint.so
+system/lib64/libinpaint_jni.so
+system/lib64/libnexcralbody_mc_jb.so
+system/lib64/libnexeditorsdk.so
+system/lib64/libnexralbody_audio.so
+system/lib64/libsqliteX.so
+system/lib64/libvis.so
+system/lib64/libwrapnexflaccalbody.so
+system/lib64/libwrapnexpcmcalbody.so
+
+# Camera Post-Processing Services
+# vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+# vendor/lib/vendor.qti.hardware.camera.postproc@1.0.so
+
+# MiSys Interface Stack (Required for HW State / Thermal checks)
+vendor/lib64/libcheckpid.so
+vendor/lib64/liblogwrap_vendor.so
 system/lib64/vendor.xiaomi.hardware.misys@1.0.so;MODULE_SUFFIX=_system
 system/lib64/vendor.xiaomi.hardware.misys@2.0.so;MODULE_SUFFIX=_system
 system/lib64/vendor.xiaomi.hardware.misys@3.0.so;MODULE_SUFFIX=_system
@@ -34,13 +78,8 @@ vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@4.0-service
-vendor/lib64/libcheckpid.so
-vendor/lib64/liblogwrap_vendor.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.citsensorservice@1.1.so
-product/etc/device_features/gauguin.xml:vendor/etc/device_features/gauguin.xml
-system/system/etc/permissions/platform-miui.xml:system/etc/permissions/platform-miui.xml
 
+# Camera LUT Filters
 vendor/etc/camera/102_SummerDay.png
 vendor/etc/camera/103_Fantasy.png
 vendor/etc/camera/104_Meet.png
@@ -53,52 +92,3 @@ vendor/etc/camera/110_BlackGold.png
 vendor/etc/camera/111_GreenOrange.png
 vendor/etc/camera/112_CyberPunk.png
 vendor/etc/camera/113_BlackIce.png
-system/lib64/libarcsoft_dualcam_refocus.so
-# MiuiCamera (Gauguin V14.0.3.0.SJSINXM)
-
-# MiuiCamera APK and JNI Libraries
-system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash|af0c918302c75401d4d9d8688a24f41d8acb72a6
-system/lib64/libcamera_algoup_jni.xiaomi.so
-system/lib64/libcamera_jpegutil_jni.xiaomi.so|0fa3daca5f84ca64b5be34d8c430fbc029a4749d
-system/lib64/libcamera_mianode_jni.xiaomi.so
-
-# MiuiExtraPhoto APK and Gallery Blobs
-system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
-system/lib64/libmibokeh_gallery.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libmibokeh_gallery.so
-
-# Refocus Blobs (Renamed in Dump)
-system/lib64/librefocus.so;DISABLE_CHECKELF;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus.so
-system/lib64/librefocus_mibokeh.so;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/librefocus_mibokeh.so
-
-# Document Photo Blobs
-system/lib64/libdoc_photo.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo.so
-system/lib64/libdoc_photo_c++_shared.so;FIX_SONAME;SYMLINK=system/priv-app/MiuiExtraPhoto/lib/arm64/libdoc_photo_c++_shared.so
-
-# MiuiCamera Additional Features (Portrait & AI)
-system/lib64/libgallery_block_sdk.so
-system/lib64/libMiuiGalleryNSGIF.so
-
-# Gallery & Camera Tools
-system/app/CameraTools/CameraTools.apk
-system/app/CameraExtensionsProxy/CameraExtensionsProxy.apk
-
-system/lib64/libarcsoft_single_chart_calibration.so
-system/lib64/libmiuiblursdk.so
-system/lib64/libselection.so
-system/lib64/libXmStreamingSDK.so
-system/lib64/libinpaint.so
-system/lib64/libinpaint_jni.so
-system/lib64/libnexcralbody_mc_jb.so
-system/lib64/libnexeditorsdk.so
-system/lib64/libnexralbody_audio.so
-system/lib64/libsqliteX.so
-system/lib64/libvis.so
-system/lib64/libwrapnexflaccalbody.so
-system/lib64/libwrapnexpcmcalbody.so
-system/lib64/libxcrash_dumper.so
-system/lib64/libxcrash.so
-
-vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
-vendor/lib/vendor.qti.hardware.camera.postproc@1.0.so
-
-
