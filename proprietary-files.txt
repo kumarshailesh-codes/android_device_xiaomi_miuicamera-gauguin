@@ -52,8 +52,8 @@ system/lib64/libwrapnexflaccalbody.so
 system/lib64/libwrapnexpcmcalbody.so
 
 # Camera Post-Processing Services
-# vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
-# vendor/lib/vendor.qti.hardware.camera.postproc@1.0.so
+vendor/lib/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib/vendor.qti.hardware.camera.postproc@1.0.so
 vendor/lib64/libvidhance.so
 vendor/lib64/camera/components/com.vidhance.node.eis.so
 vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
