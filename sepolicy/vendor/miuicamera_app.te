@@ -43,7 +43,6 @@ allow miuicamera_app system_file:file { getattr open read };
 
 # Media Codec & Audio HAL Binder Handshakes
 allow miuicamera_app audio_service:service_manager find;
-allow miuicamera_app mediacodec_service:service_manager find;
 allow miuicamera_app textservices_service:service_manager find;
 
 # Graphics Layer Mapping
