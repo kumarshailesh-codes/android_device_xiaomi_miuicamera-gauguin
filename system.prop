@@ -3,6 +3,17 @@ ro.com.google.lens.oem_camera_package=com.android.camera
 
 # Framework allowlists
 persist.vendor.camera.privapp.list=com.android.camera
+vendor.camera.aux.packagelist=com.android.camera
+
+# Camera Hal identification
+ro.hardware.camera=xiaomi
+
+# spoof MIUI version to HyperOS V1.0 to unlock newer features
+ro.miui.ui.version.code=816
+ro.miui.ui.version.name=V816
+
+# Enable advanced features
+persist.vendor.camera.enableAdvanceFeatures=0x3E7
 
 # MiuiCamera
 ro.miui.notch=1
@@ -19,6 +30,7 @@ vendor.media.omx.disable=1
 # MiuiCamera
 ro.miui.build.region=in
 ro.product.mod_device=_global
+ro.boot.camera.config=_pro
 
 # Disable Vidhance/EIS to fix video recording crash
 persist.camera.eis.enable=0
