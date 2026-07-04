@@ -37,3 +37,17 @@ persist.camera.eis.enable=0
 persist.vendor.camera.eis.enable=0
 persist.camera.is_type=0
 persist.vendor.camera.is_type=0
+
+# Disable bad vendor parallel session pipelines that freeze video modes
+persist.vendor.camera.algo.enable=0
+persist.vendor.camera.mialgo.caps=0
+persist.vendor.camera.parallel.disable=1
+
+# Kill TikTok/Mimoji tracking telemetry causing short video feature crashes
+persist.vendor.camera.shortvideo.cn=0
+persist.vendor.camera.vlog.disable=1
+persist.vendor.camera.mimoji.cache=0
+
+# Standardize AOSP media recorder layer mappings
+persist.vendor.camera.privapp.dump=0
+ro.media.recorder-max-base-layer=8

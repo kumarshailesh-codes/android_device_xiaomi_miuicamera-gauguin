@@ -7,6 +7,10 @@ product/etc/sysconfig/xiaomi.xml
 system/framework/camerax-vendor-extensions.jar;BOOT_JAR
 system/app/CameraExtensionsProxy/CameraExtensionsProxy.apk
 
+# Sensors & Firmware
+vendor/bin/init.qcom.sensors.sh
+vendor/firmware/a619_gmu.bin
+
 # MiuiCamera Core Apps and Tools
 system/priv-app/MiuiCamera/MiuiCamera.apk;OVERRIDES=Aperture,Camera2,Flash
 system/priv-app/MiuiExtraPhoto/MiuiExtraPhoto.apk
