@@ -99,20 +99,3 @@ vendor/etc/camera/110_BlackGold.png
 vendor/etc/camera/111_GreenOrange.png
 vendor/etc/camera/112_CyberPunk.png
 vendor/etc/camera/113_BlackIce.png
-
-# Leica Camera Optimizations & Profiles
-system_ext/etc/cameracustomize.json
-system_ext/etc/cameraopt.json
-system_ext/etc/cameraopt_perf.json
-system_ext/etc/cameraopt_reclaim.json
-system_ext/etc/cameraopt_thirdParty.json
-system_ext/etc/camerascene.json
-system_ext/etc/init/init.miui.cameraopt.rc
-system_ext/etc/permissions/com.xiaomi.hardware.camera.companion.xml
-system_ext/etc/permissions/miui-cameraopt.xml
-system_ext/etc/task_profiles_cameraopt.json
-
-# Thermal Camera Configurations
-vendor/etc/thermal-camera.conf
-vendor/etc/thermal-india-camera.conf
-vendor/etc/thermal-per-camera.conf
